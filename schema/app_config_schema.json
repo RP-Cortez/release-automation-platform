@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ApplicationConfiguration",
+  "type": "object",
+  "properties": {
+    "app_name": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$"
+    },
+    "environment": {
+      "type": "string",
+      "enum": ["development", "staging", "production"]
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "replicas": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 10
+    }
+  },
+  "required": ["app_name", "environment", "version", "replicas"],
+  "additionalProperties": false
+}

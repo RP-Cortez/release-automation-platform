@@ -1,0 +1,4 @@
+app_name: simulation-engine
+environment: staging
+version: 1.2.0
+replicas: 3
